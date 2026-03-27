@@ -20,9 +20,17 @@ SECRET_KEY = '8798yhuijhnjbnijhbj89uoihnljk'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['quickart-1-vvmp.onrender.com']
+ALLOWED_HOSTS = [
+    'quickart-1-vvmp.onrender.com',
+    '127.0.0.1',
+    'localhost'
+]
 
-CSRF_TRUSTED_ORIGINS = ['https://quickart-1-vvmp.onrender.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://quickart-1-vvmp.onrender.com',
+    'http://127.0.0.1:8000',
+    'http://localhost:8000'
+]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -48,6 +56,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -94,6 +103,10 @@ USE_TZ = True
 # Static + Media
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
