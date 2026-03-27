@@ -1,1 +1,1 @@
-web: gunicorn quickart.wsgi
+web: gunicorn quickart.wsgi:application
