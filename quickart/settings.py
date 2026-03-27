@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = '8798yhuijhnjbnijhbj89uoihnljk'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'quickart-1-vvmp.onrender.com',
@@ -68,7 +68,7 @@ ROOT_URLCONF = 'quickart.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,6 +80,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'quickart.wsgi.application'
 
@@ -113,9 +114,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'shop.CustomUser'
 
-TEMPLATES = [
-    {
-        'DIRS': ['templates'], 
-    },
-]
+
 
