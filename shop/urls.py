@@ -1,5 +1,13 @@
 from django.urls import path, include, re_path
 from . import views
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('login/', views.login_view),
+    path('signup/', views.signup_view),
+]
+
 extrapatterns = [
     path('', views.Checkout,name="Checkout"),
     path('address/', views.ConfirmOrder,name="checkout"),

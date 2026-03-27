@@ -7,6 +7,13 @@ from django.contrib.auth  import authenticate,  login, logout
 import json
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
+from django.shortcuts import render
+
+def login_view(request):
+    return render(request, 'login.html')
+
+def signup_view(request):
+    return render(request, 'signup.html')
 # Create your views here.
 def Home(request):
     
