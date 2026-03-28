@@ -8,9 +8,12 @@ import json
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def login_view(request):
-    return render(request, 'login.html')
+    if request.method == "POST":
+        pass
 
 def signup_view(request):
     return render(request, 'signup.html')

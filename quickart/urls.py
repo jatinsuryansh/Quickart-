@@ -20,6 +20,13 @@ from django.conf.urls.static import static
 from django.http import HttpResponse
 
 def home(request):
+    return HttpResponse("Server Working ✅")
+
+urlpatterns = [
+    path('', home),
+]
+
+def home(request):
     return HttpResponse("Home Page Working ✅")
 
 urlpatterns = [
@@ -33,6 +40,8 @@ urlpatterns = [
 ] 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    
+    
     
     
     
